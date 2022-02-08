@@ -19,7 +19,7 @@ class Workout extends Model {
           "created_at",
           [
             sequelize.literal(
-              "(SELECT COUNT(*) FROM Like WHERE workout.id = like.workout_id)"
+              "(SELECT COUNT(*) FROM like WHERE workout.id = like.workout_id)"
             ),
             "like_count",
           ],
