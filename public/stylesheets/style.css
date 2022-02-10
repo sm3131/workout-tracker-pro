@@ -56,6 +56,11 @@ p {
     font-weight: 500;
 }
 
+.like-span {
+    color:darkblue;
+    margin-left:10px;
+}
+
 .form-group {
     width: 30%;
 }
