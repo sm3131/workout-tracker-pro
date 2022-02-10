@@ -17,7 +17,6 @@ Workout.belongsTo(User, {
 User.belongsToMany(Workout, {
   through: Like,
   as: 'liked_posts',
-
   foreignKey: 'user_id',
   onDelete: 'SET NULL'
 });
@@ -43,7 +42,7 @@ User.hasMany(Like, {
   foreignKey: 'user_id'
 });
 
-Workout.hasMany(Vote, {
+Workout.hasMany(Like, {
   foreignKey: 'workout_id'
 });
 
@@ -66,4 +65,4 @@ Workout.hasMany(Comment, {
   foreignKey: 'workout_id'
 });
 
-module.exports = { User, Post, Vote, Comment };
+module.exports = { User, Workout, Like, Comment };
