@@ -1,10 +1,10 @@
 <div class="container">
     <article class="col-12">
-        {{> post-info post }}
+        {{> workout-info workout }}
     </article>
 </div>
 
-{{#if loggedIn}}
+{{!-- {{#if loggedIn}} --}}
 <form class="comment-form">
     <h2 class="comment-head">Leave a Comment</h2>
     <div class="mt-2">
@@ -14,9 +14,9 @@
         <button type="submit" class="log-btn">Add Comment</button>
     </div>
 </form>
-{{/if}}
+{{!-- {{/if}} --}}
 
-{{> comments post.comments}}
+{{> comments workout.comments}}
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>

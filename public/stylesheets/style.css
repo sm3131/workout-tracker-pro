@@ -34,7 +34,7 @@ footer {
     border-bottom-right-radius: 10px;
 }
 
-.post-list {
+.workout-list {
     list-style-type: none;
 }
 
@@ -47,7 +47,7 @@ p {
     margin-bottom: 0rem;
 }
 
-.post-title {
+.workout-title {
     font-weight:bold;
 }
 

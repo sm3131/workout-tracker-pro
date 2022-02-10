@@ -65,12 +65,12 @@ router.get('/:id', (req, res) => {
             }
         ]
     })
-        .then(dbPostData => {
-            if (!dbPostData) {
-                res.status(404).json({ message: 'No post found with this id' });
+        .then(dbWorkoutData => {
+            if (!dbWorkoutData) {
+                res.status(404).json({ message: 'No workout found with this id' });
                 return;
             }
-            res.json(dbPostData);
+            res.json(dbWorkoutData);
         })
         .catch(err => {
             console.log(err);
