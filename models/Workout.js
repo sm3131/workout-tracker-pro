@@ -1,51 +1,33 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-// create our Workout model
+//Create our Workout model
 class Workout extends Model {
-  static like(body, models) {
-    return models.Like.create({
+  static upvote(body, models) {
+    return models.Vote.create({
       user_id: body.user_id,
       workout_id: body.workout_id,
     }).then(() => {
       return Workout.findOne({
         where: {
-          id: body.Workout_id,
+          id: body.workout_id,
         },
         attributes: [
           "id",
-          "workout_description",
           "workout_title",
+          "workout_description",
+          "workout_length",
           "created_at",
           [
-            sequelize.literal(
-              "(SELECT COUNT(*) FROM like WHERE workout.id = like.workout_id)"
-            ),
-            "like_count",
-          ],
-        ],
-        include: [
-          {
-            model: models.Comment,
-            attributes: [
-              "id",
-              "comment_text",
-              "workout_id",
-              "user_id",
-              "created_at",
-            ],
-            include: {
-              model: models.User,
-              attributes: ["username"],
-            },
-          },
-        ],
+            sequelize.literal('(SELECT COUNT(*) FROM vote WHERE workout.id = vote.workout_id)'), 'vote_count'
+          ]
+        ]
       });
     });
   }
 }
 
-// create fields/columns for Workout model
+//Create fields/columns for Workout model
 Workout.init(
   {
     id: {
@@ -60,10 +42,6 @@ Workout.init(
     },
     workout_description: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    workout_date: {
-      type: DataTypes.DATE,
       allowNull: false,
     },
     workout_length: {
@@ -82,7 +60,7 @@ Workout.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "Workout",
+    modelName: "workout",
   }
 );
 
