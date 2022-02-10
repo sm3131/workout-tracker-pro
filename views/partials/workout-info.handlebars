@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="mt-4 col-12">
+        <a href="/post/{{id}}" class="post-title">{{workout_title}}</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        {{workout_description}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <p class="user-date">Completed By {{user.username}} on {{format_date created_at}}</p>
+        <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+    </div>
+</div>

@@ -33,7 +33,7 @@ router.get('/', (req, res) => {
             // pass a single workout object into the homepage template
             const workouts = dbWorkoutData.map(workout => workout.get({ plain: true }));
             res.render('homepage', {
-                workouts,
+                workouts
                 //loggedIn: req.session.loggedIn
             });
         })
@@ -43,3 +43,4 @@ router.get('/', (req, res) => {
         });
 });
 
+module.exports = router;
