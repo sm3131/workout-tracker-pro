@@ -43,6 +43,10 @@ footer {
     font-weight: bold;
 }
 
+.add-workout {
+    margin-left:15px;
+}
+
 p {
     margin-bottom: 0rem;
 }
@@ -94,8 +98,8 @@ p {
     background-color: whitesmoke;
 }
 
-.delete-post-btn {
-    width: 105px;
+.delete-workout-btn {
+    width: 135px;
 }
 
 #logout:hover {
@@ -149,6 +153,10 @@ p {
 .edit-btn {
     margin: 10px 0px;;
 }
+.edit-workout{
+    padding-top:10px;
+    margin-left:15px;
+}
 
 .comment-text {
     width: 100%;
@@ -162,6 +170,7 @@ p {
 
 .comment-head {
     color:rgb(42, 21, 231);
+    margin-top:10px;
 }
 
 .comment-form {
