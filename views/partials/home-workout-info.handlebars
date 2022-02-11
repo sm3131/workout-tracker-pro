@@ -5,12 +5,7 @@
 </div>
 <div class="row">
     <div class="col-12">
-        {{workout_description}}
-    </div>
-</div>
-<div class="row">
-    <div class="col-12">
         <p class="user-date">Completed By: {{user.username}} on {{format_date created_at}}</p>
-        <a href="/workout/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a> <span class="like-span">{{vote_count}}  {{format_plural "like"}}</span>
+        <a href="/workout/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a> <span class="like-span">{{vote_count}} {{format_plural "like"}}</span>
     </div>
 </div>

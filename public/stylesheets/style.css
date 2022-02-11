@@ -61,6 +61,27 @@ p {
     margin-left:10px;
 }
 
+.like-btn {
+    margin-left:12px;
+    margin-top: 5px;
+    background-color: cadetblue;
+    border-radius: 5px;
+    color: whitesmoke;
+}
+.like-btn:hover{
+    color:cadetblue;
+    background-color: whitesmoke;
+}
+
+.length-span {
+    color:darkblue;
+    margin-left:10px;
+}
+
+.length-form {
+    width: 30%;
+}
+
 .form-group {
     width: 30%;
 }
@@ -93,7 +114,7 @@ p {
     width: 70%;
 }
 
-.post-text {
+.workout-text {
     width: 100%;
     height: 140px;
 }
