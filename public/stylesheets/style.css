@@ -17,7 +17,7 @@ a:hover {
     color:rgb(42, 21, 231);
 }
 
-.h2-text {
+.h-text {
     color:rgb(42, 21, 231);
 }
 
@@ -57,7 +57,7 @@ p {
 }
 
 .like-span {
-    color:darkblue;
+    color:rgb(42, 21, 231);
     margin-left:10px;
 }
 
@@ -74,7 +74,7 @@ p {
 }
 
 .length-span {
-    color:darkblue;
+    color:rgb(42, 21, 231);
     margin-left:10px;
 }
 
@@ -161,7 +161,7 @@ p {
 }
 
 .comment-head {
-    color:darkblue;
+    color:rgb(42, 21, 231);
 }
 
 .comment-form {
