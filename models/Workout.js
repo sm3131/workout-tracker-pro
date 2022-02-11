@@ -45,7 +45,7 @@ Workout.init(
       allowNull: false,
     },
     workout_length: {
-      type: DataTypes.TIME,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     user_id: {

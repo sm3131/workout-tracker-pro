@@ -1,35 +1,35 @@
 a {
     text-decoration:none;
-    color:cadetblue;
+    color:rgb(42, 21, 231);
 }
 
 a:hover {
-    color:deepskyblue;
+    color:rgb(23, 174, 201);
 }
 
 .nav-bar {
-    background-color: darkblue;
+    background-color:rgb(211, 184, 30);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
 .home-header {
-    color:cadetblue;
+    color:rgb(42, 21, 231);
 }
 
 .h2-text {
-    color:cadetblue;
+    color:rgb(42, 21, 231);
 }
 
 main {
-    background-color:honeydew;
+    background-color:rgb(241, 220, 101);
     padding: 0px 15px 10px 15px;
 }
 
 footer {
-    background-color: darkblue;
+    background-color: rgb(211, 184, 30);
     font-size: 18px;
-    color:cadetblue;
+    color:rgb(42, 21, 231);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -39,7 +39,7 @@ footer {
 }
 
 .create-post {
-    color:cadetblue;
+    color:rgb(42, 21, 231);
     font-weight: bold;
 }
 
@@ -52,7 +52,7 @@ p {
 }
 
 .user-date {
-    color:navy;
+    color:rgb(23, 174, 201);
     font-weight: 500;
 }
 
@@ -64,12 +64,12 @@ p {
 .like-btn {
     margin-left:12px;
     margin-top: 5px;
-    background-color: cadetblue;
+    background-color: rgb(42, 21, 231);
     border-radius: 5px;
     color: whitesmoke;
 }
 .like-btn:hover{
-    color:cadetblue;
+    color:rgb(42, 21, 231);
     background-color: whitesmoke;
 }
 
@@ -78,23 +78,19 @@ p {
     margin-left:10px;
 }
 
-.length-form {
-    width: 30%;
-}
-
 .form-group {
     width: 30%;
 }
 
 .log-btn {
     margin-top: 10px;
-    background-color: cadetblue;
+    background-color: rgb(42, 21, 231);
     border-radius: 5px;
     color: whitesmoke;
 }
 
 .log-btn:hover{
-    color:cadetblue;
+    color:rgb(42, 21, 231);
     background-color: whitesmoke;
 }
 
@@ -119,6 +115,12 @@ p {
     height: 140px;
 }
 
+.label-heads{
+    color:rgb(42, 21, 231);
+    font-weight:bold;
+    margin-top:5px;
+}
+
 .post-btn {
     width: 20%;
 }
@@ -132,7 +134,7 @@ p {
 }
 
 .edit-link {
-    background-color: cadetblue;
+    background-color: rgb(42, 21, 231);
     color:whitesmoke;
     border-radius: 5px;
     padding: 4px 20px;
@@ -140,7 +142,7 @@ p {
 }
 
 .edit-link:hover {
-    color:cadetblue;
+    color:rgb(42, 21, 231);
     background-color: whitesmoke;
 }
 
