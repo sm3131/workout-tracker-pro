@@ -27,19 +27,19 @@
                 {{!-- <a href="/login" class="col-12 col-md-2 col-lg-2">Login</a>
                 {{/if}}                 --}}
 
-                {{!-- {{#if loggedIn}} --}}
+                
             <nav class="row justify-content-center nav-bar pb-3">
+                {{#if loggedIn}}
                 <a href="/" class="col-12 col-md-2 col-lg-2">Home</a>
                 <a href="/community" class="col-12 col-md-2 col-lg-2">Community Workouts</a>
                 <a href="/dashboard" class="col-12 col-md-2 col-lg-2">Your Workouts</a>
                 <a href="/pick-workout" class="col-12 col-md-2 col-lg-2">Create Workout</a>
                 <a id="logout" class="col-12 col-md-2 col-lg-2">Logout</a>
-                <a href="/login" class="col-12 col-md-2 col-lg-2">Login</a>
-                {{!-- {{else}} --}}
-                {{!-- <a href="/" class="col-12 col-md-4 col-lg-4">Home</a>
-                <a href="/" class="col-12 col-md-4 col-lg-4">Community Workouts</a>
-                <a href="/login" class="col-12 col-md-4 col-lg-4">Login</a> --}}
-                {{!-- {{/if}} --}}
+                {{else}}
+                <a href="/" class="col-12 col-md-4 col-lg-4">Home</a>
+                <a href="/community" class="col-12 col-md-4 col-lg-4">Community Workouts</a>
+                <a href="/login" class="col-12 col-md-4 col-lg-4">Login</a>
+                {{/if}}
             </nav>
         </header>
         <main>

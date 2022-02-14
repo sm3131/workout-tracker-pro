@@ -1,3 +1,4 @@
+{{#if workouts.length}}
 <ul class="container workout-list">
   {{#each workouts as |workout|}}
   <li class="col-12">
@@ -5,3 +6,6 @@
   </li>
   {{/each}}
 </ul>
+{{else}}
+<h3 class="h-text pt-2 text-center">No Workouts to Display! Be the First to Post a Workout!</h3>
+{{/if}}

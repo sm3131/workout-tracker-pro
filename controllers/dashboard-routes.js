@@ -35,7 +35,7 @@ router.get('/', (req, res) => {
         .then(dbWorkoutData => {
             // serialize data before passing to template
             const workouts = dbWorkoutData.map(workout => workout.get({ plain: true }));
-            res.render('dashboard', { workouts })
+            res.render('dashboard', { workouts, loggedIn: true })
         })
         .catch(err => {
             console.log(err);
@@ -81,8 +81,8 @@ router.get('/edit/:id', (req, res) => {
             console.log(workout);
             // pass data to template
             res.render('edit-workout', {
-                workout
-                // loggedIn: true
+                workout,
+                loggedIn: true
             });
         })
         .catch(err => {

@@ -4,7 +4,7 @@
     </article>
 </div>
 
-{{!-- {{#if loggedIn}} --}}
+{{#if loggedIn}}
 <button type="button" class="like-btn"> &#x1F44D; Like</button>
 <form class="comment-form">
     <h2 class="comment-head">Leave a Comment</h2>
@@ -15,11 +15,11 @@
         <button type="submit" class="log-btn">Add Comment</button>
     </div>
 </form>
-{{!-- {{/if}} --}}
+{{/if}}
 
 {{> comments workout.comments}}
 
-{{!-- {{#if loggedIn}} --}}
+{{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/upvote.js"></script>
-{{!-- {{/if}} --}}
+{{/if}}

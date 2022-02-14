@@ -51,6 +51,22 @@ router.get('/:id', (req, res) => {
         })
 })
 
+//Route to create a new user
+router.post('/', (req, res) => {
+    User.create({
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password
+    })
+        .then(dbUserData => {
+            res.json(dbUserData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.json(500).json(err);
+        })
+})
+
 //Route to allow a user to login
 router.post('/login', (req, res) => {
     User.findOne({
@@ -70,34 +86,30 @@ router.post('/login', (req, res) => {
             return;
         }
 
-        // req.session.save(() => {
-        //     // declare session variables
-        //     req.session.user_id = dbUserData.id;
-        //     req.session.email = dbUserData.email;
-        //     req.session.loggedIn = true;
+        req.session.save(() => {
+            // declare session variables
+            req.session.user_id = dbUserData.id;
+            req.session.email = dbUserData.email;
+            req.session.loggedIn = true;
 
-        //     res.json({ user: dbUserData, message: 'You are now logged in!' });
-        // })
-        res.json({ user: dbUserData, message: 'You are now logged in!' });
+            res.json({ user: dbUserData, message: 'You are now logged in!' });
+        })
         })
     });
 });
 
-//Route to create a new user
-router.post('/', (req, res) => {
-    User.create({
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password
-    })
-        .then(dbUserData => {
-            res.json(dbUserData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.json(500).json(err);
-        })
-})
+//Route to allow the user to logout
+router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    }
+    else {
+        //res.status(404).end();
+        res.redirect('/login');
+    }
+});
 
 //Route to delete a user
 router.delete('/:id', (req, res) => {

@@ -44,7 +44,7 @@ const { Workout, User, Comment, Vote } = require('../models');
 // });
 
 router.get('/', (req, res) => {
-    res.render('homepage');
+    res.render('homepage', { loggedIn: req.session.loggedIn });
 });
 
 router.get('/community', (req, res) => {
@@ -79,8 +79,8 @@ router.get('/community', (req, res) => {
             // pass a single workout object into the homepage template
             const workouts = dbWorkoutData.map(workout => workout.get({ plain: true }));
             res.render('community-workouts', {
-                workouts
-                //loggedIn: req.session.loggedIn
+                workouts,
+                loggedIn: req.session.loggedIn
             });
         })
         .catch(err => {
@@ -89,18 +89,18 @@ router.get('/community', (req, res) => {
         });
 });
 
-// router.get('/login', (req, res) => {
-//     if (req.session.loggedIn) {
-//         res.redirect('/');
-//         return;
-//     }
-
-//     res.render('login');
-// });
-
 router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
     res.render('login');
 });
+
+// router.get('/login', (req, res) => {
+//     res.render('login');
+// });
 
 router.get('/workout/:id', (req, res) => {
     Workout.findOne({
@@ -141,8 +141,8 @@ router.get('/workout/:id', (req, res) => {
 
             // pass data to template
             res.render('single-workout', {
-                workout
-                //loggedIn: req.session.loggedIn
+                workout,
+                loggedIn: req.session.loggedIn
             });
         })
         .catch(err => {
