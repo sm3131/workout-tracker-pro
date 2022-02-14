@@ -81,7 +81,7 @@ router.get('/:id', (req, res) => {
 //Route to create a new workout
 router.post('/', (req, res) => {
     Workout.create({
-        workout_title: req.body.workout_title,
+        workout_title: req.body.title,
         workout_description: req.body.workout_description,
         workout_length: req.body.workout_length,
         //user_id: req.session.user_id
@@ -96,7 +96,7 @@ router.post('/', (req, res) => {
 
 //Route to like a workout
 router.put('/upvote', (req, res) => {
-    Workout.upvote(req.body, { Vote })
+    Workout.upvote(req.body, { Vote, Comment, User })
         .then(dbWorkoutData => res.json(dbWorkoutData))
         .catch(err => {
             console.log(err);
@@ -108,7 +108,7 @@ router.put('/upvote', (req, res) => {
 router.put('/:id', (req, res) => {
     Workout.update(
         {
-            workout_title: req.body.workout_title,
+            workout_title: req.body.title,
             workout_description: req.body.workout_description,
             workout_length: req.body.workout_length
         },

@@ -7,7 +7,8 @@ async function upvoteClickHandler(event) {
     const response = await fetch('/api/workouts/upvote', {
       method: 'PUT',
       body: JSON.stringify({
-        post_id: id
+        workout_id: id,
+        user_id: 1
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -21,4 +22,4 @@ async function upvoteClickHandler(event) {
     }
   }
   
-  document.querySelector('.upvote-btn').addEventListener('click', upvoteClickHandler);
+  document.querySelector('.like-btn').addEventListener('click', upvoteClickHandler);

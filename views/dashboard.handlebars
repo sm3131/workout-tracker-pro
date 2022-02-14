@@ -1,15 +1,15 @@
 <section class="add-workout">
     <h2 class="pt-3 h-text">Add A New Workout</h2>
 
-    <form class="new-post-form">
+    <form class="new-workout-form">
         <div class="form-group title-form">
             <label class="label-heads" for="workout-title">Title of Workout:</label>
-            <input type="text" class="form-control" id="workout-title" name="workout-name" placeholder="Title">
+            <input type="text" class="form-control" id="workout-name" name="workout-title" placeholder="Title">
         </div>
         <div class="form-group length-form">
-            <form>
+            {{!-- <form> --}}
                 <p class="label-heads">Workout Duration:</p> 
-                <select id="duration">
+                <select name="length" id="duration">
                     <option> ---Choose Minutes--- </option>
                     <option> 15 </option>
                     <option> 30 </option>
@@ -24,7 +24,7 @@
                     <option> 165 </option>
                     <option> 180+ </option>
                 </select>
-            </form>
+            {{!-- </form> --}}
         </div>
         <div class="form-group text-form">
             <label class="label-heads" for="workout-content">Workout Description:</label>

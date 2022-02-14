@@ -59,6 +59,7 @@ router.get('/community', (req, res) => {
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE workout.id = vote.workout_id)'), 'vote_count']
         ],
+        order: [['created_at', 'DESC']],
         include: [
             {
                 model: Comment,

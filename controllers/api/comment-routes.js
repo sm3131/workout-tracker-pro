@@ -54,6 +54,7 @@ router.post('/', (req,res) => {
     Comment.create({
         comment_text: req.body.comment_text,
         //change to session user_id
+        //user_id: req.body.user_id,
         user_id: req.body.user_id,
         workout_id: req.body.workout_id
     })

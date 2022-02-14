@@ -1,14 +1,14 @@
 <article class="edit-workout">
     <h2 class="h-text">Edit Workout</h2>
-    <form class="edit-post-form">
+    <form class="edit-workout-form">
         <div class="form-group title-form">
             <label class="label-heads" for="post-title">Workout Title:</label>
-            <input type="text" class="form-control" name="post-title" value="{{workout.workout_title}}">
+            <input type="text" class="form-control" name="workout-title" value="{{workout.workout_title}}">
         </div>
                 <div class="form-group length-form">
-            <form>
+            {{!-- <form> --}}
                 <p class="label-heads">Workout Duration:</p> 
-                <select id="duration">
+                <select name="length" id="duration">
                     <option>{{workout.workout_length}}</option>
                     <option> ---Choose Minutes--- </option>
                     <option> 15 </option>
@@ -24,11 +24,11 @@
                     <option> 165 </option>
                     <option> 180+ </option>
                 </select>
-            </form>
+            {{!-- </form> --}}
         </div>
         <div class="form-group text-form">
-            <label class="label-heads" for="post-content">Workout Description:</label>
-            <textarea class="workout-text" name="post-body">{{workout.workout_description}}</textarea>
+            <label class="label-heads" for="workout-content">Workout Description:</label>
+            <textarea class="workout-text" name="workout-body" id="workout-content">{{workout.workout_description}}</textarea>
         </div>
         <button type="submit" class="log-btn">Update Workout</button>
     </form>

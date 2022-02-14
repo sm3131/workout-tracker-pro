@@ -2,17 +2,17 @@ async function newFormHandler(event) {
     event.preventDefault();
   
     const title = document.querySelector('input[name="workout-title"]').value;
-    const workout_description = document.querySelector('input[name="workout-description"]').value;
-    const workout_length = document.querySelector('input[name="workout-length"]').value;
-    const workout_date = document.querySelector('input[name="workout-date"]').value;
+    const workout_length = document.querySelector('select[name="length"]').value;
+    const workout_description = document.querySelector('textarea[name="workout-body"]').value;
+    const user_id =1;
 
     const response = await fetch(`/api/workouts`, {
       method: 'POST',
       body: JSON.stringify({
         title,
         workout_description,
-        workout_date,
-        workout_length
+        workout_length,
+        user_id
       }),
       headers: {
         'Content-Type': 'application/json'
