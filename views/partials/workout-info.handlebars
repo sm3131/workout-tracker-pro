@@ -11,6 +11,6 @@
 <div class="row">
     <div class="col-12">
         <p class="user-date">Completed By: {{user.username}} on {{format_date created_at}}</p>
-        <a href="/workout/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a> <span class="like-span">{{vote_count}}  {{format_plural "Like"}}</span>
+        <a href="/workout/{{id}}">{{comments.length}} {{format_plural "Comment" comments.length}}</a> <span class="like-span">{{vote_count}}  {{format_plural "Like" vote_count}}</span>
     </div>
 </div>
