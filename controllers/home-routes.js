@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Workout, User, Comment, Vote } = require('../models');
+const { Workout, User, Comment, Exercise, Routine, Vote } = require('../models');
 
 // router.get('/', (req, res) => {
 //     console.log(req.session);
@@ -102,6 +102,37 @@ router.get('/login', (req, res) => {
 //     res.render('login');
 // });
 
+router.get('/create', (req, res) => {
+    Routine.findAll({
+        attributes: [
+            'id',
+            'name'
+        ],
+        order: [['created_at', 'DESC']],
+        include: [
+            {
+                model: User,
+                attributes: ['username'],
+            },
+            {
+                model: Exercise,
+                attributes: ['name', 'gif', 'equipment']
+            }
+        ]
+    })
+        .then(dbRoutineData => {
+            const routines = dbRoutineData.map(routine => routine.get({ plain: true }));
+            res.render('create-workout', {
+                routines,
+                loggedIn: req.session.loggedIn
+            })
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 router.get('/workout/:id', (req, res) => {
     Workout.findOne({
         where: {
@@ -144,6 +175,40 @@ router.get('/workout/:id', (req, res) => {
                 workout,
                 loggedIn: req.session.loggedIn
             });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+router.get('/routine/:id', (req,res) => {
+    Routine.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: [
+            'id',
+            'name'
+            ],
+        include: [
+            {
+                model: User,
+                attributes: ['username'],
+            },
+            {
+                model:Exercise,
+                attributes: ['name', 'gif', 'equipment']
+            }
+        ]
+    })
+        .then(dbRoutineData => {
+            const routine = dbRoutineData.get({ plain: true });
+            console.log(routine);
+            res.render('routine', {
+                routine,
+                loggedIn: req.session.loggedIn
+            })
         })
         .catch(err => {
             console.log(err);
