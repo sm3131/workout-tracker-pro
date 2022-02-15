@@ -1,15 +1,23 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
+<<<<<<< HEAD
 // create our Workout model
 class Workout extends Model {
   static like(body, models) {
     return models.Like.create({
+=======
+//Create our Workout model
+class Workout extends Model {
+  static upvote(body, models) {
+    return models.Vote.create({
+>>>>>>> 5b92bab7bc3ee56d1ebda386d8cc8debdb96145b
       user_id: body.user_id,
       workout_id: body.workout_id,
     }).then(() => {
       return Workout.findOne({
         where: {
+<<<<<<< HEAD
           id: body.Workout_id,
         },
         attributes: [
@@ -40,12 +48,30 @@ class Workout extends Model {
             },
           },
         ],
+=======
+          id: body.workout_id,
+        },
+        attributes: [
+          "id",
+          "workout_title",
+          "workout_description",
+          "workout_length",
+          "created_at",
+          [
+            sequelize.literal('(SELECT COUNT(*) FROM vote WHERE workout.id = vote.workout_id)'), 'vote_count'
+          ]
+        ]
+>>>>>>> 5b92bab7bc3ee56d1ebda386d8cc8debdb96145b
       });
     });
   }
 }
 
+<<<<<<< HEAD
 // create fields/columns for Workout model
+=======
+//Create fields/columns for Workout model
+>>>>>>> 5b92bab7bc3ee56d1ebda386d8cc8debdb96145b
 Workout.init(
   {
     id: {
@@ -62,12 +88,17 @@ Workout.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+<<<<<<< HEAD
     workout_date: {
       type: DataTypes.DATE,
       allowNull: false,
     },
     workout_length: {
       type: DataTypes.TIME,
+=======
+    workout_length: {
+      type: DataTypes.INTEGER,
+>>>>>>> 5b92bab7bc3ee56d1ebda386d8cc8debdb96145b
       allowNull: false,
     },
     user_id: {
@@ -82,7 +113,11 @@ Workout.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
+<<<<<<< HEAD
     modelName: "Workout",
+=======
+    modelName: "workout",
+>>>>>>> 5b92bab7bc3ee56d1ebda386d8cc8debdb96145b
   }
 );
 

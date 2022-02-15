@@ -15,6 +15,7 @@
         <header class="container nav-bar">
             <h1 class="row">
                 <a class="title" href="/">Workout Tracker Pro</a>
+<<<<<<< HEAD
             </h1>
             {{!-- <nav class="row justify-space-between nav-bar pb-3">
                 <a href="/" class="col-12 col-md-2 col-lg-2">Home</a>
@@ -40,6 +41,21 @@
                 <a href="/" class="col-12 col-md-4 col-lg-4">Community Workouts</a>
                 <a href="/login" class="col-12 col-md-4 col-lg-4">Login</a> --}}
                 {{!-- {{/if}} --}}
+=======
+            </h1>                
+            <nav class="row justify-content-center nav-bar pb-3">
+                {{#if loggedIn}}
+                <a href="/" class="col-12 col-md-2 col-lg-2">Home</a>
+                <a href="/community" class="col-12 col-md-2 col-lg-2">Community Workouts</a>
+                <a href="/dashboard" class="col-12 col-md-2 col-lg-2">Your Workouts</a>
+                <a href="/create" class="col-12 col-md-2 col-lg-2">Create Workout</a>
+                <a id="logout" class="col-12 col-md-2 col-lg-2">Logout</a>
+                {{else}}
+                <a href="/" class="col-12 col-md-4 col-lg-4">Home</a>
+                <a href="/community" class="col-12 col-md-4 col-lg-4">Community Workouts</a>
+                <a href="/login" class="col-12 col-md-4 col-lg-4">Login</a>
+                {{/if}}
+>>>>>>> 5b92bab7bc3ee56d1ebda386d8cc8debdb96145b
             </nav>
         </header>
         <main>
