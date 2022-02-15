@@ -1,0 +1,220 @@
+a {
+    text-decoration:none;
+    color:rgb(42, 21, 231);
+}
+
+a:hover {
+    color:rgb(23, 174, 201);
+}
+
+.nav-bar {
+    background-color:rgb(211, 184, 30);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+}
+
+.home-header {
+    color:rgb(42, 21, 231);
+    text-align: center;
+}
+
+.start-p {
+    font-size:20px;
+    color:rgb(42, 21, 231);
+    margin-top:10px;
+}
+
+.home-list {
+    list-style-type: none;
+    color:rgb(42, 21, 231);
+    font-size:16px;
+}
+
+.h-text {
+    color:rgb(42, 21, 231);
+}
+
+main {
+    background-color:rgb(241, 220, 101);
+    padding: 0px 15px 10px 15px;
+}
+
+footer {
+    background-color: rgb(211, 184, 30);
+    font-size: 18px;
+    color:rgb(42, 21, 231);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.workout-list {
+    list-style-type: none;
+}
+
+.create-post {
+    color:rgb(42, 21, 231);
+    font-weight: bold;
+}
+
+.add-workout {
+    margin-left:15px;
+}
+
+p {
+    margin-bottom: 0rem;
+}
+
+.workout-title {
+    font-weight:bold;
+}
+
+.user-date {
+    color:rgb(23, 174, 201);
+    font-weight: 500;
+}
+
+.like-span {
+    color:rgb(42, 21, 231);
+    margin-left:10px;
+}
+
+.like-btn {
+    margin-left:12px;
+    margin-top: 5px;
+    background-color: rgb(42, 21, 231);
+    border-radius: 5px;
+    color: whitesmoke;
+}
+.like-btn:hover{
+    color:rgb(42, 21, 231);
+    background-color: whitesmoke;
+}
+
+.length-span {
+    color:rgb(42, 21, 231);
+    margin-left:10px;
+}
+
+.form-group {
+    width: 30%;
+}
+
+.log-btn {
+    margin-top: 10px;
+    background-color: rgb(42, 21, 231);
+    border-radius: 5px;
+    color: whitesmoke;
+}
+
+.log-btn:hover{
+    color:rgb(42, 21, 231);
+    background-color: whitesmoke;
+}
+
+.delete-workout-btn {
+    width: 135px;
+}
+
+#logout:hover {
+    cursor:pointer;
+}
+
+.title-form {
+    width: 50%;
+}
+
+.text-form {
+    width: 70%;
+}
+
+.workout-text {
+    width: 100%;
+    height: 140px;
+}
+
+.label-heads{
+    color:rgb(42, 21, 231);
+    font-weight:bold;
+    margin-top:5px;
+}
+
+.post-btn {
+    width: 20%;
+}
+
+.user-post-head {
+    margin-bottom: -10px;
+}
+
+.user-posts {
+    padding-left: 35px;
+}
+
+.edit-link {
+    background-color: rgb(42, 21, 231);
+    color:whitesmoke;
+    border-radius: 5px;
+    padding: 4px 20px;
+    border:2px solid black;
+}
+
+.edit-link:hover {
+    color:rgb(42, 21, 231);
+    background-color: whitesmoke;
+}
+
+.edit-btn {
+    margin: 10px 0px;;
+}
+.edit-workout{
+    padding-top:10px;
+    margin-left:15px;
+}
+
+.comment-text {
+    width: 100%;
+    height: 140px;
+}
+
+.comment{
+    margin-top: 8px;
+    padding-left: 7px;
+}
+
+.comment-head {
+    color:rgb(42, 21, 231);
+    margin-top:10px;
+}
+
+.comment-form {
+    padding-left: 12px;
+}
+
+.comment-btn {
+    font-size: 20px;
+    margin-left: 34px;
+    padding: 5px;
+    background-color: rgb(46, 205, 211);
+    border-radius: 5px;
+    color: whitesmoke;
+    border:2px solid black;
+}
+
+.comment-btn:hover{
+    color:rgb(46, 205, 211);
+    background-color: whitesmoke;
+}
+
+.delete-comment {
+    margin-bottom: 10px;
+    background-color: rgb(46, 205, 211);
+    border-radius: 5px;
+    color: whitesmoke;
+    border:2px solid black;
+}
+
+.delete-comment:hover{
+    color:rgb(46, 205, 211);
+    background-color: whitesmoke;
+}
