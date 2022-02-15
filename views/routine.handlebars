@@ -1,0 +1,17 @@
+<div>
+    <h3 class="h-text pt-2 routine-name">{{routine.name}}</h3>
+    <ol>
+        {{#each routine.exercises as |exercise|}}
+        <li>
+            <p>{{exercise.name}}</p>
+            <a href="{{exercise.gif}}">{{exercise.gif}}</a>
+            <p>{{exercise.equipment}}</p>
+            <br>
+            {{/each}}
+        </li>
+    </ol>
+    <button class="log-btn delete-workout" type="button">Delete Workout Routine</button>
+</div>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="/javascript/delete-routine.js"></script>

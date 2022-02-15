@@ -1,0 +1,76 @@
+<h4 class="h-text text-center pt-2">Need help creating a workout? Follow the Steps Below!</h4>
+<p class="instruct">Step 1: Enter the name of your workout below and hit Create Workout!</p>
+<form id="create-name" class="workout-name">
+    <input type="text" name="routine" placeholder="Workout Name">
+    <button type="submit" class="log-btn">Create Workout</button>
+</form>
+<div class="display-off" id="workout-plan">
+    <h5 class="routine-name h-text"></h5>
+    <ol class="workout-list"></ol>
+    <div id="save" class="display-off">
+        <p class="instruct">To save your workout click the Save button below! All saved workouts will be located at the bottom of the page!</p>
+        <button type="button" class="save-workout log-btn">Save Workout</button>
+    </div>
+</div>
+<div class="" id="body-part">
+    <p class="instruct pt-2">Step 2: Select a body part you want to workout from the dropdown menu below and hit submit
+        to randomly
+        generate an exercise.</p>
+    <form class="exercise-form pb-2">
+        <label class="h-text" for=exercises>Select Body Part:</label>
+        <select class="d-block" name="exercise" id="exercises">
+            <option value="back">back</option>
+            <option value="cardio">cardio</option>
+            <option value="chest">chest</option>
+            <option value="lower arms">lower arms</option>
+            <option value="lower legs">lower legs</option>
+            <option value="neck">neck</option>
+            <option value="upper arms">upper arms</option>
+            <option value="upper legs">upper legs</option>
+            <option value="waist">waist</option>
+        </select>
+        <button class="part-submit-btn log-btn d-block mt-2" type="submit">Submit</button>
+    </form>
+</div>
+
+<div class="" id="select-exercise">
+    <p class="instruct">Step 3: Once the random exercise displays below, take a look at the exercise demo gif and determine if
+        you like the randomly generated exercise.</p>
+    <p class="h-text">Randomly Generated Exercise:</p>
+    <div id="exercise">
+        <ul class="exercise-list" style="list-style:none">
+            <span><u>Exercise Name:</u></span>
+            <li id="exercise-name" class="name"></li>
+            <span><u>Demo Gif:</u></span>
+            <li><a class="gif" href="" target="_blank"></a></li>
+            <span><u>Equipment Required:</u></span>
+            <li class="equipment"></li>
+        </ul>
+    </div>
+</div>
+
+<div>
+    <p class="instruct">Step 4: If you DO NOT like the exercise, you can randomly generate a different one (Step 2). If you like
+        the exercise move to Step 5.</p>
+    <br>
+    <p class="instruct">Step 5: To add the randomly generated exercise to your workout routine, click the Exercise
+        Name and it will populate underneath your workout name.</p>
+    <br>
+    <p class="instruct">Step 6: Continue randomly generating exercises and adding them to your workout routine until you
+        are satisfied and ready to save your workout.</p>
+    <br>
+    {{#if routines.length}}
+    <p class="instruct">Step 7: Click on ANY of your saved workouts below to access it and start your workout for the day!</p>
+    {{/if}}
+    <br>
+    <ul id="saved-workouts">
+        {{#each routines as |routine|}}
+        <li><a href="/routine/{{routine.id}}">{{routine.name}}</a></li>
+        {{/each}}
+    </ul>
+</div>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="/javascript/find-exercise.js"></script>
+<script src="/javascript/add-exercise.js"></script>
+<script src="/javascript/create-workout.js"></script>
