@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
         name: req.body.name,
         gif: req.body.gif,
         equipment: req.body.equip,
-        //user_id: req.session.user_id
+        user_id: req.session.user_id,
         routine_id: req.body.routineId
     })
         .then(dbExerciseData => res.json(dbExerciseData))

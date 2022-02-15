@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     Routine.create({
         name: req.body.routineName,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
         .then(dbRoutineData => res.json(dbRoutineData))
         .catch(err => {

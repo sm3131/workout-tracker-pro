@@ -84,8 +84,7 @@ router.post('/', (req, res) => {
         workout_title: req.body.title,
         workout_description: req.body.workout_description,
         workout_length: req.body.workout_length,
-        //user_id: req.session.user_id
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
         .then(dbWorkoutData => res.json(dbWorkoutData))
         .catch(err => {
