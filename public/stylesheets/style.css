@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-=======
-* {
-    font-family:Arial, Helvetica, georgia;
+ {
+    font-family:'Arima Madurai', cursive;
 }
->>>>>>> 5b92bab7bc3ee56d1ebda386d8cc8debdb96145b
 a {
     text-decoration:none;
     color:rgb(42, 21, 231);
@@ -59,7 +56,7 @@ footer {
 }
 
 .create-post {
-    color:rgb(42, 21, 231);
+    color:rgb(102, 21, 231);
     font-weight: bold;
 }
 
@@ -127,19 +124,11 @@ p {
 }
 
 .title-form {
-<<<<<<< HEAD
-    width: 50%;
-}
-
-.text-form {
-    width: 70%;
-=======
     width: 60%;
 }
 
 .text-form {
     width: 90%;
->>>>>>> 5b92bab7bc3ee56d1ebda386d8cc8debdb96145b
 }
 
 .workout-text {
@@ -153,13 +142,6 @@ p {
     margin-top:5px;
 }
 
-<<<<<<< HEAD
-.post-btn {
-    width: 20%;
-}
-
-=======
->>>>>>> 5b92bab7bc3ee56d1ebda386d8cc8debdb96145b
 .user-post-head {
     margin-bottom: -10px;
 }
@@ -190,11 +172,7 @@ p {
 }
 
 .comment-text {
-<<<<<<< HEAD
-    width: 100%;
-=======
     width: 90%;
->>>>>>> 5b92bab7bc3ee56d1ebda386d8cc8debdb96145b
     height: 140px;
 }
 
@@ -208,13 +186,10 @@ p {
     margin-top:10px;
 }
 
-<<<<<<< HEAD
-=======
 .comment-body {
     color:dimgray;
 }
 
->>>>>>> 5b92bab7bc3ee56d1ebda386d8cc8debdb96145b
 .comment-form {
     padding-left: 12px;
 }
