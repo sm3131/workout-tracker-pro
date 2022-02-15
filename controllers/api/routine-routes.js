@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Exercise, Routine } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     Routine.findAll({
@@ -25,7 +26,7 @@ router.get('/', (req, res) => {
         });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Routine.create({
         name: req.body.routineName,
         user_id: req.session.user_id
@@ -38,7 +39,7 @@ router.post('/', (req, res) => {
 });
 
 //Route to delete a routine
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Routine.destroy({
         where: {
             id: req.params.id

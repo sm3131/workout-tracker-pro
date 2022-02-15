@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Exercise, Routine } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 //Route to get all exercise with comments and user
 router.get('/', (req, res) => {
@@ -28,7 +29,7 @@ router.get('/', (req, res) => {
         });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Exercise.create({
         name: req.body.name,
         gif: req.body.gif,
