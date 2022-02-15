@@ -35,12 +35,10 @@ Workout.belongsToMany(User, {
 //Votes to users and workouts
 Vote.belongsTo(User, {
     foreignKey: 'user_id'
-    // onDelete: 'SET NULL'
 });
 
 Vote.belongsTo(Workout, {
     foreignKey: 'workout_id'
-    // onDelete: 'SET NULL'
 });
 
 User.hasMany(Vote, {
@@ -59,8 +57,8 @@ Comment.belongsTo(User, {
 
 //Comment to workout
 Comment.belongsTo(Workout, {
-    foreignKey: 'workout_id'
-    // onDelete: 'SET NULL'
+    foreignKey: 'workout_id',
+    onDelete: 'CASCADE'
 });
 
 //User to comments
@@ -71,7 +69,8 @@ User.hasMany(Comment, {
 
 //Workout to comments
 Workout.hasMany(Comment, {
-    foreignKey: 'workout_id'
+    foreignKey: 'workout_id',
+    onDelete: 'CASCADE'
 });
 
 module.exports = { User, Workout, Vote, Comment };

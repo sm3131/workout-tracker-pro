@@ -6,7 +6,6 @@
             <input type="text" class="form-control" name="workout-title" value="{{workout.workout_title}}">
         </div>
                 <div class="form-group length-form">
-            {{!-- <form> --}}
                 <p class="label-heads">Workout Duration:</p> 
                 <select name="length" id="duration">
                     <option>{{workout.workout_length}}</option>
@@ -24,7 +23,6 @@
                     <option> 165 </option>
                     <option> 180+ </option>
                 </select>
-            {{!-- </form> --}}
         </div>
         <div class="form-group text-form">
             <label class="label-heads" for="workout-content">Workout Description:</label>
@@ -32,7 +30,7 @@
         </div>
         <button type="submit" class="log-btn">Update Workout</button>
     </form>
-    <button type="button" class="log-btn delete-workout-btn">Delete Workout</button>
+    <button type="button" class="log-btn" id="delete-workout-btn">Delete Workout</button>
 </article>
 
 <form class="comment-form">

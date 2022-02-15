@@ -17,7 +17,8 @@ async function loginFormHandler(event) {
       if (response.ok) {
         document.location.replace('/dashboard');
       } else {
-        alert(response.statusText);
+        // alert(response.statusText);
+        swal("Try Again!", "Incorrect email or password!", "error");
       }
     }
   }
@@ -43,7 +44,8 @@ async function loginFormHandler(event) {
       if (response.ok) {
         document.location.replace('/dashboard/');
       } else {
-        alert(response.statusText);
+        //alert(response.statusText);
+        swal("Try Again!", "Please enter a valid email!", "error");
       }
     }
   }
