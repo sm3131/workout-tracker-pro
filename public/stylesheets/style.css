@@ -39,7 +39,7 @@ a:hover {
 }
 
 main {
-    background-color: black
+    background-color: black;
     padding: 0px 15px 10px 15px;
 }
 
@@ -111,7 +111,7 @@ p {
     color: whitesmoke;
 }
 
-.log-btn:hover{
+.log-btn:hover {
     color:rgb(231, 116, 21);
     background-color: whitesmoke;
 }
