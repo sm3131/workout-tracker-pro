@@ -96,7 +96,7 @@ router.post('/', withAuth, (req, res) => {
 
 //Route to like a workout
 router.put('/upvote', withAuth, (req, res) => {
-    Workout.upvote(req.body, { Vote, Comment, User })
+    Workout.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
         .then(dbWorkoutData => res.json(dbWorkoutData))
         .catch(err => {
             console.log(err);
