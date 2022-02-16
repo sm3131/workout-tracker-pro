@@ -3,50 +3,50 @@
 }
 a {
     text-decoration:none;
-    color:rgb(42, 21, 231);
+    color:rgb(231, 116, 21);
 }
 
 a:hover {
-    color:rgb(23, 174, 201);
+    color: whitesmoke;
 }
 
 .nav-bar {
-    background-color:rgb(211, 184, 30);
+    background-color:gray;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     text-align: center;
 }
 
 .home-header {
-    color:rgb(42, 21, 231);
+    color:rgb(231, 116, 21);
     text-align: center;
 }
 
 .start-p {
     font-size:20px;
-    color:rgb(42, 21, 231);
+    color:rgb(231, 116, 21);
     margin-top:10px;
 }
 
 .home-list {
     list-style-type: none;
-    color:rgb(42, 21, 231);
+    color:rgb(231, 116, 21);
     font-size:16px;
 }
 
 .h-text {
-    color:rgb(42, 21, 231);
+    color:rgb(231, 116, 21);
 }
 
 main {
-    background-color:rgb(241, 220, 101);
+    background-color: black
     padding: 0px 15px 10px 15px;
 }
 
 footer {
-    background-color: rgb(211, 184, 30);
-    font-size: 18px;
-    color:rgb(42, 21, 231);
+    background-color: gray;
+    font-size: 24px;
+    color: orange;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -56,7 +56,7 @@ footer {
 }
 
 .create-post {
-    color:rgb(102, 21, 231);
+    color:rgb(231, 116, 21);
     font-weight: bold;
 }
 
@@ -74,29 +74,29 @@ p {
 }
 
 .user-date {
-    color:rgb(23, 174, 201);
+    color:rgb(231, 116, 21);
     font-weight: 500;
 }
 
 .like-span {
-    color:rgb(42, 21, 231);
+    color:rgb(231, 116, 21);
     margin-left:10px;
 }
 
 .like-btn {
     margin-left:12px;
     margin-top: 5px;
-    background-color: rgb(42, 21, 231);
+    background-color: rgb(231, 193, 21);
     border-radius: 5px;
     color: whitesmoke;
 }
 .like-btn:hover{
-    color:rgb(42, 21, 231);
+    color:rgb(231, 116, 21);
     background-color: whitesmoke;
 }
 
 .length-span {
-    color:rgb(42, 21, 231);
+    color:rgb(231, 116, 21);
     margin-left:10px;
 }
 
@@ -106,13 +106,13 @@ p {
 
 .log-btn {
     margin-top: 10px;
-    background-color: rgb(42, 21, 231);
+    background-color: rgb(231, 116, 21;
     border-radius: 5px;
     color: whitesmoke;
 }
 
 .log-btn:hover{
-    color:rgb(42, 21, 231);
+    color:rgb(231, 116, 21);
     background-color: whitesmoke;
 }
 
@@ -138,7 +138,7 @@ p {
 }
 
 .label-heads{
-    color:rgb(42, 21, 231);
+    color:rgb(231, 116, 21);
     font-weight:bold;
     margin-top:5px;
 }
@@ -152,7 +152,7 @@ p {
 }
 
 .edit-link {
-    background-color: rgb(42, 21, 231);
+    background-color: rgb(231, 116, 21);
     color:whitesmoke;
     border-radius: 5px;
     padding: 4px 20px;
@@ -160,7 +160,7 @@ p {
 }
 
 .edit-link:hover {
-    color:rgb(42, 21, 231);
+    color:rgb(231, 116, 21);
     background-color: whitesmoke;
 }
 
@@ -183,7 +183,7 @@ p {
 }
 
 .comment-head {
-    color:rgb(42, 21, 231);
+    color:rgb(231, 116, 21);
     margin-top:10px;
 }
 
