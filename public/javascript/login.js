@@ -42,10 +42,10 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/dashboard/');
+        document.location.replace('/dashboard');
       } else {
-        //alert(response.statusText);
-        swal("Try Again!", "Please enter a valid email!", "error");
+        alert(response.statusText);
+        //swal("Try Again!", "Please enter a valid email!", "error");
       }
     }
   }

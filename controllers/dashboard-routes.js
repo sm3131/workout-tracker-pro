@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Workout, User, Comment, Vote } = require('../models');
+const { Workout, User, Comment } = require('../models');
 //const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
     Workout.findAll({
         where: {
-            user_id: 1
+            user_id: req.session.user_id
         },
         attributes: [
             'id',
@@ -36,6 +36,7 @@ router.get('/', (req, res) => {
             // serialize data before passing to template
             const workouts = dbWorkoutData.map(workout => workout.get({ plain: true }));
             res.render('dashboard', { workouts, loggedIn: true })
+            //res.render('dashboard', { workouts, loggedIn: req.session.loggedIn })
         })
         .catch(err => {
             console.log(err);
@@ -83,6 +84,7 @@ router.get('/edit/:id', (req, res) => {
             res.render('edit-workout', {
                 workout,
                 loggedIn: true
+                //loggedIn: req.session.loggedIn
             });
         })
         .catch(err => {

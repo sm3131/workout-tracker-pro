@@ -1,8 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 const routes = require('express').Router();
 =======
 const router = require('express').Router()
 const { User, Workout, Comment, Vote } = require('../../models')
+=======
+const router = require('express').Router();
+const { User, Workout, Comment, Vote } = require('../../models');
+>>>>>>> 6f8b0fe898a680f39b178a19d7972ecdcff90415
 
 //Route to get all users
 router.get('/', (req, res) => {
@@ -62,7 +67,14 @@ router.post('/', (req, res) => {
         password: req.body.password
     })
         .then(dbUserData => {
-            res.json(dbUserData);
+            req.session.save(() => {
+                req.session.user_id = dbUserData.id;
+                req.session.email = dbUserData.email;
+                req.session.username = dbUserData.username;
+                req.session.loggedIn = true;
+
+                res.json(dbUserData);
+            });
         })
         .catch(err => {
             console.log(err);
@@ -93,6 +105,7 @@ router.post('/login', (req, res) => {
             // declare session variables
             req.session.user_id = dbUserData.id;
             req.session.email = dbUserData.email;
+            req.session.username = dbUserData.username;
             req.session.loggedIn = true;
 
             res.json({ user: dbUserData, message: 'You are now logged in!' });

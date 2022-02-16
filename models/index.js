@@ -3,6 +3,8 @@ const User = require('./User');
 const Workout = require('./Workout');
 const Vote = require('./Vote');
 const Comment = require('./Comment');
+const Exercise = require('./Exercise');
+const Routine = require('./Routine');
 
 // create associations 
 
@@ -73,4 +75,21 @@ Workout.hasMany(Comment, {
     onDelete: 'CASCADE'
 });
 
-module.exports = { User, Workout, Vote, Comment };
+User.hasMany(Routine, {
+    foreignKey: 'user_id'
+});
+
+Routine.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
+Routine.hasMany(Exercise, {
+    foreignKey: 'routine_id',
+    onDelete: 'CASCADE'
+});
+
+Exercise.belongsTo(Routine, {
+    foreignKey: 'routine_id'
+});
+
+module.exports = { User, Workout, Vote, Comment, Routine, Exercise };

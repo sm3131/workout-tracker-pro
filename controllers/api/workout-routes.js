@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Workout, User, Vote, Comment } = require('../../models');
 const sequelize = require('../../config/connection');
+const withAuth = require('../../utils/auth');
 
 //Route to get all workouts with comments and user
 router.get('/', (req, res) => {
@@ -79,13 +80,12 @@ router.get('/:id', (req, res) => {
 })
 
 //Route to create a new workout
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Workout.create({
         workout_title: req.body.title,
         workout_description: req.body.workout_description,
         workout_length: req.body.workout_length,
-        //user_id: req.session.user_id
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
         .then(dbWorkoutData => res.json(dbWorkoutData))
         .catch(err => {
@@ -95,7 +95,7 @@ router.post('/', (req, res) => {
 });
 
 //Route to like a workout
-router.put('/upvote', (req, res) => {
+router.put('/upvote', withAuth, (req, res) => {
     Workout.upvote(req.body, { Vote, Comment, User })
         .then(dbWorkoutData => res.json(dbWorkoutData))
         .catch(err => {
@@ -105,7 +105,7 @@ router.put('/upvote', (req, res) => {
 })
 
 //Route to update workout information
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Workout.update(
         {
             workout_title: req.body.title,
@@ -132,7 +132,7 @@ router.put('/:id', (req, res) => {
 });
 
 //Route to delete a workout
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Workout.destroy({
         where: {
             id: req.params.id

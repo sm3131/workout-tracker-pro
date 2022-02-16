@@ -222,3 +222,38 @@ p {
     color:rgb(46, 205, 211);
     background-color: whitesmoke;
 }
+
+.exercise-list {
+    color:blue;
+}
+
+.exercise-list:hover {
+    cursor: pointer;
+}
+
+.exercise-item {
+    color:green;
+    list-style: number;
+}
+
+.routine-name{
+    text-decoration:underline;
+}
+
+.instruct {
+    color:navy;
+    font-size:18px;
+}
+
+.display-on {
+    display:block;
+}
+
+.display-off {
+    display:none;
+}
+
+#saved-workouts {
+    list-style: square;
+    font-size: 20px;
+}
