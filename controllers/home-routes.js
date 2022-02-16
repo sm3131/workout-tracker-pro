@@ -64,6 +64,9 @@ router.get('/login', (req, res) => {
 
 router.get('/create', (req, res) => {
     Routine.findAll({
+        where: {
+            user_id:req.session.user_id
+        },
         attributes: [
             'id',
             'name'
