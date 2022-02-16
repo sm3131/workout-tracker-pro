@@ -54,8 +54,7 @@ router.post('/', withAuth, (req,res) => {
     //add in session user_id check before create
     Comment.create({
         comment_text: req.body.comment_text,
-        //change to session user_id
-        user_id: req.body.user_id,
+        user_id: req.session.user_id,
         workout_id: req.body.workout_id
     })
     .then(dbCommentData => res.json(dbCommentData))
