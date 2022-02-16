@@ -8,7 +8,7 @@ router.get('/:bodyPart', (req, res) => {
     url: `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${req.params.bodyPart}`,
     headers: {
       'x-rapidapi-host': 'exercisedb.p.rapidapi.com',
-      'x-rapidapi-key': process.env.rapid_APIkey
+      'x-rapidapi-key': 'eb37a707d9msh643d5116098d0e8p1b2d44jsn7fefe2e0eb3b'
     }
   };
 
