@@ -2,17 +2,6 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-<<<<<<< HEAD
-// create our User model
-class User extends Model {
-  // set up method to run on instance data (per user) to check password
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
-}
-
-// create fields/columns for User model
-=======
 //Create our User model
 class User extends Model {
   // set up method to run on instance data (per user) to check password
@@ -29,7 +18,6 @@ class User extends Model {
 }
 
 //Create fields/columns for User model
->>>>>>> 5b92bab7bc3ee56d1ebda386d8cc8debdb96145b
 User.init(
   {
     id: {
@@ -38,14 +26,7 @@ User.init(
       primaryKey: true,
       autoIncrement: true
     },
-<<<<<<< HEAD
   
-=======
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
->>>>>>> 5b92bab7bc3ee56d1ebda386d8cc8debdb96145b
     email: {
       type: DataTypes.STRING,
       allowNull: false,
