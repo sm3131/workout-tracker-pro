@@ -1,3 +1,4 @@
+//Edit workout post (name, duration, description)
 async function editFormHandler(event) {
     event.preventDefault();
   
@@ -7,8 +8,6 @@ async function editFormHandler(event) {
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
-
-    console.log(title);
 
     const response = await fetch(`/api/workouts/${id}`, {
       method: 'PUT',
@@ -25,7 +24,7 @@ async function editFormHandler(event) {
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
-      alert(response.statusText);
+      swal("Missing Field!", "Do not leave any fields blank!", "error");
     }
   }
   

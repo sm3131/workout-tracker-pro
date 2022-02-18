@@ -1,3 +1,4 @@
+//Function to login to workout tracker pro app
 async function loginFormHandler(event) {
     event.preventDefault();
   
@@ -17,12 +18,12 @@ async function loginFormHandler(event) {
       if (response.ok) {
         document.location.replace('/dashboard');
       } else {
-        // alert(response.statusText);
         swal("Try Again!", "Incorrect email or password!", "error");
       }
     }
   }
   
+  //Function to sign-up to workout tracker pro app
   async function signupFormHandler(event) {
     event.preventDefault();
   
@@ -44,8 +45,8 @@ async function loginFormHandler(event) {
       if (response.ok) {
         document.location.replace('/dashboard');
       } else {
-        alert(response.statusText);
-        //swal("Try Again!", "Please enter a valid email!", "error");
+        //alert(response.statusText);
+        swal("Try Again!", "Email is either taken or invalid!", "error");
       }
     }
   }

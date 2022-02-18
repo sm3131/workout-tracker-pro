@@ -33,7 +33,6 @@ function addToWorkoutPlan() {
     let exerciseItem = document.createElement('li');
     exerciseItem.className = 'exercise-item';
     exerciseItem.append(namePara, gifPara, equipPara);
-    console.log(exerciseItem);
 
     //Adding a delete button
     let deleteBtn = document.createElement('button');
@@ -43,7 +42,6 @@ function addToWorkoutPlan() {
 
     //Adding list element exercise to ordered list under routine name
     workoutList.appendChild(exerciseItem);
-    console.log(workoutList);
 
     //Click listener to delete button
     document.querySelectorAll('.delete-exercise').forEach(item => { item.addEventListener('click', deleteExercise) });
@@ -51,7 +49,6 @@ function addToWorkoutPlan() {
     //Selecting save button to turn on display once first exercise is added
     saveBtn = document.querySelector('#save');
     saveBtnClass = document.querySelector('#save').className;
-    console.log(saveBtnClass);
 
     if(saveBtnClass === 'display-off') {
         saveBtn.className = 'display-on';
@@ -65,23 +62,10 @@ function addToWorkoutPlan() {
 //Delete an exercise from the workout routine list
 function deleteExercise(event) {
     deleteExBtn = event.currentTarget;
-    console.log(deleteExBtn);
 
     let listItem = deleteExBtn.parentNode;
-    console.log(listItem);
     let workoutList = document.querySelector('.workout-list');
     workoutList.removeChild(listItem);
-
-    // fetch(`/api/exercises/${id}`, {
-    //     method: 'DELETE'
-    // })
-    // .then(response => {
-    //     if(response.ok) {
-    //         console.log('Deleted!')
-    //     } else {
-    //         alert(response.statusText);
-    //     }
-    // })
 }
 
 document.querySelector('#exercise-name').addEventListener('click', addToWorkoutPlan);

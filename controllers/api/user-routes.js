@@ -61,7 +61,7 @@ router.post('/', (req, res) => {
         .then(dbUserData => {
             req.session.save(() => {
                 req.session.user_id = dbUserData.id;
-                req.session.email = dbUserData.email;
+                //req.session.email = dbUserData.email;
                 req.session.username = dbUserData.username;
                 req.session.loggedIn = true;
 
@@ -70,7 +70,7 @@ router.post('/', (req, res) => {
         })
         .catch(err => {
             console.log(err);
-            res.json(500).json(err);
+            res.status(404).json({ message: 'email already taken' });
         })
 })
 

@@ -21,7 +21,6 @@ async function newFormHandler(event) {
       document.location.replace('/dashboard');
     } else {
       swal("Missing Field!", "Do not leave any fields blank!", "error");
-      //alert(response.statusText);
     }
   }
   

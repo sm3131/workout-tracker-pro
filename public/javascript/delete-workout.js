@@ -1,3 +1,4 @@
+//Delete workout post by id
 async function deleteFormHandler(event) {
     event.preventDefault();
   

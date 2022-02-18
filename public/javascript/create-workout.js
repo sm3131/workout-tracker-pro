@@ -2,21 +2,21 @@
 function confirmCreate(event) {
     event.preventDefault();
     routineName = document.querySelector('input[name="routine"]').value;
-    if(routineName === "") {
+    if (routineName === "") {
         swal("Error", "Please enter a valid name", "error");
     } else {
-    swal({
-        title: "Are you sure you want create this workout?",
-        text: "Once you create, you can no longer rename this workout!",
-        buttons: [true, "Create"]
-    })
-        .then((willSave) => {
-            if (willSave) {
-                createRoutine();
-            } else {
-                return false;
-            }
-        });
+        swal({
+            title: "Are you sure you want create this workout?",
+            text: "Once you create, you can no longer rename this workout!",
+            buttons: [true, "Create"]
+        })
+            .then((willSave) => {
+                if (willSave) {
+                    createRoutine();
+                } else {
+                    return false;
+                }
+            });
     }
 }
 
@@ -42,8 +42,6 @@ let routineId;
 function createRoutine() {
     const routineName = document.querySelector('input[name="routine"]').value;
 
-    console.log(routineName);
-
     fetch('/api/routines', {
         method: 'POST',
         body: JSON.stringify({
@@ -57,9 +55,7 @@ function createRoutine() {
             if (response.ok) {
                 response.json()
                     .then(data => {
-                        console.log(data);
                         routineId = data.id;
-                        console.log(routineId);
                     })
             } else {
                 swal("Routine Name Already Exists!", "Please enter a different name!", "error");
@@ -79,26 +75,22 @@ function createRoutine() {
 
 //Function to save the workout the user created
 function saveWorkout() {
-    debugger;
     //Selecting the ordered list under the routine name with all the exercises add to it
     let saveWrkList = document.querySelectorAll('.exercise-item');
-    console.log(saveWrkList);
 
     //Creating an empty array to store the exercises
     let workoutArr = [];
 
     //Loop through the saved workout list to put each item into an object then into an array
-    for(i=0; i<saveWrkList.length; i++) {
+    for (i = 0; i < saveWrkList.length; i++) {
         let exc = saveWrkList[i].innerText;
         let excArr = exc.split('\n\n');
 
         workoutArr[i] = {
             'name': excArr[0],
             'gif': excArr[1],
-            'equipment':excArr[2] 
+            'equipment': excArr[2]
         }
-
-        console.log(workoutArr);
     }
 
     //For each object in the workout array make a post request to add each exercise to the exercise database table
@@ -106,9 +98,6 @@ function saveWorkout() {
         const name = item.name;
         const gif = item.gif;
         const equip = item.equipment;
-
-        console.log(name, gif, equip);
-        console.log(routineId);
 
         //Save each exercise to database
         fetch('/api/exercises', {
@@ -126,7 +115,6 @@ function saveWorkout() {
             .then(response => {
                 response.json()
                     .then(data => {
-                        console.log(data);
                         location.reload();
                     })
             })

@@ -11,7 +11,6 @@ async function findExercises(event) {
     } else {
         formattedBodyPart = bodyPart
     }
-    console.log(formattedBodyPart);
 
     //fetch request to server api to send request to third party api to get exercises based on body part
     const response = await fetch(`/api/exercisesDb/${formattedBodyPart}`, {
@@ -21,11 +20,8 @@ async function findExercises(event) {
     if (response.ok) {
         response.json()
             .then(exercises => {
-                console.log(exercises);
                 //API returns array of exercises, so to get one random exercise perform the following
                 let randomExercise = exercises[Math.floor(Math.random() * exercises.length)];
-
-                console.log(randomExercise);
 
                 //Making the exercise name and equipment upper case
                 let lowerName = randomExercise.name
