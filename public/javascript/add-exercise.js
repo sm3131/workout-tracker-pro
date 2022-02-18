@@ -33,6 +33,7 @@ function addToWorkoutPlan() {
     let exerciseItem = document.createElement('li');
     exerciseItem.className = 'exercise-item';
     exerciseItem.append(namePara, gifPara, equipPara);
+    console.log(exerciseItem);
 
     //Adding a delete button
     let deleteBtn = document.createElement('button');
@@ -42,6 +43,7 @@ function addToWorkoutPlan() {
 
     //Adding list element exercise to ordered list under routine name
     workoutList.appendChild(exerciseItem);
+    console.log(workoutList);
 
     //Click listener to delete button
     document.querySelectorAll('.delete-exercise').forEach(item => { item.addEventListener('click', deleteExercise) });

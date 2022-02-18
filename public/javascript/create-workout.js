@@ -79,32 +79,27 @@ function createRoutine() {
 
 //Function to save the workout the user created
 function saveWorkout() {
+    debugger;
     //Selecting the ordered list under the routine name with all the exercises add to it
     let saveWrkList = document.querySelectorAll('.exercise-item');
     console.log(saveWrkList);
 
-    //Creating an empty array and object to store the exercises
+    //Creating an empty array to store the exercises
     let workoutArr = [];
-    let exerciseObj = {
-        'name': '',
-        'gif': '',
-        'equipment': ''
-    }
-    //For each exercise list element in the list grab the inner text only without the breaks
-    saveWrkList.forEach(list => {
-        let exc = list.innerText;
+
+    //Loop through the saved workout list to put each item into an object then into an array
+    for(i=0; i<saveWrkList.length; i++) {
+        let exc = saveWrkList[i].innerText;
         let excArr = exc.split('\n\n');
 
-        //assign each part of the exercise to the different object property keys
-        exerciseObj.name = excArr[0];
-        exerciseObj.gif = excArr[1];
-        exerciseObj.equipment = excArr[2];
+        workoutArr[i] = {
+            'name': excArr[0],
+            'gif': excArr[1],
+            'equipment':excArr[2] 
+        }
 
-        console.log(exerciseObj);
-        //Push each object created to the workout array
-        workoutArr.push(exerciseObj);
         console.log(workoutArr);
-    })
+    }
 
     //For each object in the workout array make a post request to add each exercise to the exercise database table
     workoutArr.forEach(item => {
