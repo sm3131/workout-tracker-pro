@@ -272,3 +272,9 @@ p {
     list-style: square;
     font-size: 20px;
 }
+
+@media (max-width: 576px) {
+    .form-group {
+        width: 75%;
+    }
+}

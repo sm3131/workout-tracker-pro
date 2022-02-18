@@ -1,6 +1,10 @@
 //Function to confirm if the user wants to create the workout routine name
 function confirmCreate(event) {
     event.preventDefault();
+    routineName = document.querySelector('input[name="routine"]').value;
+    if(routineName === "") {
+        swal("Error", "Please enter a valid name", "error");
+    } else {
     swal({
         title: "Are you sure you want create this workout?",
         text: "Once you create, you can no longer rename this workout!",
@@ -13,6 +17,7 @@ function confirmCreate(event) {
                 return false;
             }
         });
+    }
 }
 
 //Function to confirm if user wants to save the workout they created
