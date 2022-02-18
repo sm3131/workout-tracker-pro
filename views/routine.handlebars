@@ -4,7 +4,7 @@
         {{#each routine.exercises as |exercise|}}
         <li>
             <p>{{exercise.name}}</p>
-            <a href="{{exercise.gif}}" target="_blank">{{exercise.gif}}</a>
+            <a id="routine-gif-wrap" href="{{exercise.gif}}" target="_blank">{{exercise.gif}}</a>
             <p>{{exercise.equipment}}</p>
             <br>
             {{/each}}
@@ -13,5 +13,4 @@
     <button class="log-btn delete-workout" type="button">Delete Workout Routine</button>
 </div>
 
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="/javascript/delete-routine.js"></script>

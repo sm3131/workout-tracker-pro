@@ -230,6 +230,22 @@ p {
     cursor: pointer;
 }
 
+#gif-wrap {
+    white-space: pre-wrap;    
+    white-space: -moz-pre-wrap; 
+    white-space: -pre-wrap;  
+    white-space: -o-pre-wrap;   
+    word-wrap: break-word; 
+}
+
+#routine-gif-wrap {
+    white-space: pre-wrap;    
+    white-space: -moz-pre-wrap; 
+    white-space: -pre-wrap;  
+    white-space: -o-pre-wrap;   
+    word-wrap: break-word; 
+}
+
 .exercise-item {
     color:green;
     list-style: number;

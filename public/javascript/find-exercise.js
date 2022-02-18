@@ -27,7 +27,7 @@ async function findExercises(event) {
 
                 console.log(randomExercise);
 
-                //Making the exercise name upper case
+                //Making the exercise name and equipment upper case
                 let lowerName = randomExercise.name
                 let upperName = lowerName.charAt(0).toUpperCase() + lowerName.slice(1);
                 let gifUrl = randomExercise.gifUrl
@@ -41,7 +41,7 @@ async function findExercises(event) {
 
                 //Adding exercise info to list elements on page
                 nameList.textContent = upperName;
-                gifList.textContent = gifUrl;
+                gifList.textContent = 'Click for Demo Gif';
                 gifList.href = gifUrl;
                 equipmentList.textContent = upperEquipment;
             })

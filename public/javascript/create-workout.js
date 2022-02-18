@@ -4,7 +4,6 @@ function confirmCreate(event) {
     swal({
         title: "Are you sure you want create this workout?",
         text: "Once you create, you can no longer rename this workout!",
-        icon: "warning",
         buttons: [true, "Create"]
     })
         .then((willSave) => {
@@ -22,7 +21,6 @@ function confirmSave(event) {
     swal({
         title: "Are you sure you want to save your workout?",
         text: "Once saved, you can no longer edit the workout!",
-        icon: "warning",
         buttons: [true, "Save"]
     })
         .then((willSave) => {

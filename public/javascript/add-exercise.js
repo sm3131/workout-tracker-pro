@@ -1,9 +1,12 @@
-let itemTag = 0;
 //Add exercise to workout routine
 function addToWorkoutPlan() {
+
+    let workoutDiv = document.querySelector('#workout-plan');
+    if(workoutDiv.className === 'display-on') {
+
     //Selecting the exercise name, gif, and equipment from the page
     let exerciseName = document.querySelector('.name').textContent;
-    let exerciseGif = document.querySelector('.gif').textContent;
+    let exerciseGif = document.getElementById("gif-link").href;
     let exerciseEquip = document.querySelector('.equipment').textContent;
 
     //Creating a paragraph to store the name
@@ -13,6 +16,7 @@ function addToWorkoutPlan() {
     //Creating a paragraph and anchor tag to store the gif link
     let gifPara = document.createElement('p');
     let gifAnchor = document.createElement('a');
+    gifAnchor.id = 'gif-wrap';
     gifAnchor.href = exerciseGif;
     gifAnchor.target = '_blank';
     gifAnchor.textContent = exerciseGif
@@ -28,7 +32,6 @@ function addToWorkoutPlan() {
     //Creating a list element to store the exercise name, gif, and equipment
     let exerciseItem = document.createElement('li');
     exerciseItem.className = 'exercise-item';
-    exerciseItem.id = itemTag;
     exerciseItem.append(namePara, gifPara, equipPara);
 
     //Adding a delete button
@@ -51,8 +54,10 @@ function addToWorkoutPlan() {
     if(saveBtnClass === 'display-off') {
         saveBtn.className = 'display-on';
     } 
-
-    itemTag++
+    }
+    else {
+        return;
+    }
 }
 
 //Delete an exercise from the workout routine list
