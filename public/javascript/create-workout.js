@@ -58,7 +58,7 @@ function createRoutine() {
                         routineId = data.id;
                     })
             } else {
-                swal("Routine Name Already Exists!", "Please enter a different name!", "error");
+                swal("Error!", "Please try entering a different name!", "error");
                 return;
             }
             //Change display to none to no longer display routine name form

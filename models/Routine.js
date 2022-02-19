@@ -15,8 +15,7 @@ Routine.init(
         },
         name: {
             type: DataTypes.STRING,
-            allowNull: false,
-            unique: true
+            allowNull: false
         },
         user_id: {
             type: DataTypes.INTEGER,

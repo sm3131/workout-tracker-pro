@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Workout, User, Comment, Exercise, Routine, Vote } = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
     res.render('homepage', { loggedIn: req.session.loggedIn });
@@ -55,7 +56,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/create', (req, res) => {
+router.get('/create', withAuth, (req, res) => {
     Routine.findAll({
         where: {
             user_id:req.session.user_id
@@ -138,7 +139,7 @@ router.get('/workout/:id', (req, res) => {
         });
 });
 
-router.get('/routine/:id', (req,res) => {
+router.get('/routine/:id', withAuth, (req,res) => {
     Routine.findOne({
         where: {
             id: req.params.id

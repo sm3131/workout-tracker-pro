@@ -3,6 +3,9 @@ async function findExercises(event) {
 
     event.preventDefault();
 
+    let exerciseForm = document.querySelector('.exercise-form');
+    exerciseForm.classList.add('display-off');
+
     //Getting the value from the body part dropdown menu and formatting if necessary to account for spaces
     const bodyPart = document.querySelector('select[name="exercise"]').value;
     let formattedBodyPart;
@@ -40,6 +43,8 @@ async function findExercises(event) {
                 gifList.textContent = 'Click for Demo Gif';
                 gifList.href = gifUrl;
                 equipmentList.textContent = upperEquipment;
+
+                exerciseForm.classList.remove('display-off');
             })
     } else {
         alert(response.statusText);
@@ -47,3 +52,4 @@ async function findExercises(event) {
 }
 
 document.querySelector('.exercise-form').addEventListener('submit', findExercises);
+

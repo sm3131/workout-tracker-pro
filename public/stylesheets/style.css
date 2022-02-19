@@ -226,6 +226,10 @@ p {
     color:blue;
 }
 
+.search-list {
+    color:chocolate;
+}
+
 .exercise-list:hover {
     cursor: pointer;
 }
