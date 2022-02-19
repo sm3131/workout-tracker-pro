@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 //Creating Exercise model
-class Routine extends Model { }
+class Routine extends Model {}
 
 //Creating columns/fields for Routine model
 Routine.init(

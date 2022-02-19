@@ -78,11 +78,9 @@ router.get('/edit/:id', (req, res) => {
             }
             // serialize the data
             const workout = dbWorkoutData.get({ plain: true });
-            console.log(workout);
             // pass data to template
             res.render('edit-workout', {
                 workout,
-                //loggedIn: true
                 loggedIn: req.session.loggedIn
             });
         })

@@ -1,15 +1,12 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Workout, User, Comment, Exercise, Routine, Vote } = require('../models');
-const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
     res.render('homepage', { loggedIn: req.session.loggedIn });
 });
 
 router.get('/community', (req, res) => {
-    console.log(req.session);
-
     Workout.findAll({
         attributes: [
             'id',
@@ -57,10 +54,6 @@ router.get('/login', (req, res) => {
 
     res.render('login');
 });
-
-// router.get('/login', (req, res) => {
-//     res.render('login');
-// });
 
 router.get('/create', (req, res) => {
     Routine.findAll({
@@ -167,7 +160,6 @@ router.get('/routine/:id', (req,res) => {
     })
         .then(dbRoutineData => {
             const routine = dbRoutineData.get({ plain: true });
-            console.log(routine);
             res.render('routine', {
                 routine,
                 loggedIn: req.session.loggedIn

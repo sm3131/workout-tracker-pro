@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 //Creating Comment model
-class Comment extends Model { }
+class Comment extends Model {}
 
 //Creating columns/fields for Comment model
 Comment.init(

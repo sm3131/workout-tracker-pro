@@ -1,6 +1,7 @@
 <div class="row">
     <div class="mt-4 col-12">
-        <a href="/workout/{{id}}" class="workout-title">{{workout_title}}</a> <span class="length-span">({{workout_length}} {{format_plural  "Minute"}})</span>
+        <a href="/workout/{{id}}" class="workout-title">{{workout_title}}</a> <span
+            class="length-span">({{workout_length}} {{format_plural "Minute"}})</span>
     </div>
 </div>
 <div class="row">
@@ -11,6 +12,7 @@
 <div class="row">
     <div class="col-12">
         <p class="user-date">Completed By: {{user.username}} on {{format_date created_at}}</p>
-        <a href="/workout/{{id}}">{{comments.length}} {{format_plural "Comment" comments.length}}</a> <span class="like-span">{{vote_count}}  {{format_plural "Like" vote_count}}</span>
+        <a href="/workout/{{id}}">{{comments.length}} {{format_plural "Comment" comments.length}}</a> <span
+            class="like-span">{{vote_count}} {{format_plural "Like" vote_count}}</span>
     </div>
 </div>

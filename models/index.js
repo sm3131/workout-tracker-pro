@@ -15,7 +15,6 @@ User.hasMany(Workout, {
 
 Workout.belongsTo(User, {
     foreignKey: 'user_id'
-    // onDelete: 'SET NULL'
 });
 
 //User to votes/likes
@@ -23,7 +22,6 @@ User.belongsToMany(Workout, {
     through: Vote,
     as: 'voted_workouts',
     foreignKey: 'user_id'
-    // onDelete: 'SET NULL'
 });
 
 //Workout to votes/likes
@@ -31,7 +29,6 @@ Workout.belongsToMany(User, {
     through: Vote,
     as: 'voted_workouts',
     foreignKey: 'workout_id'
-    // onDelete: 'SET NULL'
 });
 
 //Votes to users and workouts
@@ -54,7 +51,6 @@ Workout.hasMany(Vote, {
 //Comment to user
 Comment.belongsTo(User, {
     foreignKey: 'user_id'
-    // onDelete: 'SET NULL'
 });
 
 //Comment to workout
@@ -66,7 +62,6 @@ Comment.belongsTo(Workout, {
 //User to comments
 User.hasMany(Comment, {
     foreignKey: 'user_id'
-    // onDelete: 'SET NULL'
 });
 
 //Workout to comments
