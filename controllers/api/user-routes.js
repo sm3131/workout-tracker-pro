@@ -24,7 +24,7 @@ router.get('/:id', (req, res) => {
             {
                 model: Workout,
                 attributes: ['id', 'workout_title', 'workout_description',
-                'workout_length', 'created_at']
+                    'workout_length', 'created_at']
             },
             {
                 model: Comment,
@@ -87,22 +87,22 @@ router.post('/login', (req, res) => {
         }
         // Verify user
         dbUserData.checkPassword(req.body.password)
-        .then(match => {
-        if (!match) {
-            res.status(400).json({ message: 'Incorrect password!' });
-            return;
-        }
+            .then(match => {
+                if (!match) {
+                    res.status(400).json({ message: 'Incorrect password!' });
+                    return;
+                }
 
-        req.session.save(() => {
-            // declare session variables
-            req.session.user_id = dbUserData.id;
-            req.session.email = dbUserData.email;
-            req.session.username = dbUserData.username;
-            req.session.loggedIn = true;
+                req.session.save(() => {
+                    // declare session variables
+                    req.session.user_id = dbUserData.id;
+                    req.session.email = dbUserData.email;
+                    req.session.username = dbUserData.username;
+                    req.session.loggedIn = true;
 
-            res.json({ user: dbUserData, message: 'You are now logged in!' });
-        })
-        })
+                    res.json({ user: dbUserData, message: 'You are now logged in!' });
+                })
+            })
     });
 });
 

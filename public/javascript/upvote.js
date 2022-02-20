@@ -1,3 +1,4 @@
+//ability for user to like a workout post
 async function upvoteClickHandler(event) {
   event.preventDefault();
 

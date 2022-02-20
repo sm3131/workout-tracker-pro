@@ -22,11 +22,11 @@ Exercise.init(
     },
     gif: {
       type: DataTypes.STRING,
-      allowNull:false
+      allowNull: false
     },
     equipment: {
       type: DataTypes.STRING,
-      allowNull:false
+      allowNull: false
     },
     routine_id: {
       type: DataTypes.INTEGER,

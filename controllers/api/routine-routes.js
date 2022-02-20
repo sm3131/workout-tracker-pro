@@ -7,14 +7,14 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'name'
-            ],
+        ],
         include: [
             {
                 model: User,
                 attributes: ['username'],
             },
             {
-                model:Exercise,
+                model: Exercise,
                 attributes: ['name', 'gif', 'equipment']
             }
         ]

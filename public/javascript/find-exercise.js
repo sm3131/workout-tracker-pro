@@ -52,4 +52,3 @@ async function findExercises(event) {
 }
 
 document.querySelector('.exercise-form').addEventListener('submit', findExercises);
-

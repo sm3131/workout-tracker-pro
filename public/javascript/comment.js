@@ -1,3 +1,4 @@
+//add a comment to a workout post
 async function commentFormHandler(event) {
   event.preventDefault();
 

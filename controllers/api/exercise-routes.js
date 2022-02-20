@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
             'name',
             'gif',
             'equipment',
-            ],
+        ],
         include: [
             {
                 model: Routine,

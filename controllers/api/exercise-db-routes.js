@@ -13,11 +13,11 @@ router.get('/:bodyPart', (req, res) => {
   };
 
   axios.request(options)
-  .then(function (response) {
-    res.json(response.data);
-  }).catch(function (error) {
-    console.error(error);
-  });
+    .then(function (response) {
+      res.json(response.data);
+    }).catch(function (error) {
+      console.error(error);
+    });
 })
 
 module.exports = router;

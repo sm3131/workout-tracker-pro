@@ -59,7 +59,7 @@ router.get('/login', (req, res) => {
 router.get('/create', withAuth, (req, res) => {
     Routine.findAll({
         where: {
-            user_id:req.session.user_id
+            user_id: req.session.user_id
         },
         attributes: [
             'id',
@@ -139,7 +139,7 @@ router.get('/workout/:id', (req, res) => {
         });
 });
 
-router.get('/routine/:id', withAuth, (req,res) => {
+router.get('/routine/:id', withAuth, (req, res) => {
     Routine.findOne({
         where: {
             id: req.params.id
@@ -147,14 +147,14 @@ router.get('/routine/:id', withAuth, (req,res) => {
         attributes: [
             'id',
             'name'
-            ],
+        ],
         include: [
             {
                 model: User,
                 attributes: ['username'],
             },
             {
-                model:Exercise,
+                model: Exercise,
                 attributes: ['name', 'gif', 'equipment']
             }
         ]
