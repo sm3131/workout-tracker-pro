@@ -2,7 +2,7 @@
 
 # Description
 
-The Workout Tracker Pro app was created to provide users with a motivating and encouraging way to incorporate fitness into social media. Workout Tracker Pro allows its users to post about workouts, create workouts, view other users workouts, and comment and like other users workouts. This app was designed to make fitness fun and encourage more people to get active and share their experiences with fitness.  
+The Workout Tracker Pro app was created to provide users with a motivating and encouraging way to combine fitness and social media. Workout Tracker Pro allows its users to post about workouts, create workouts, view other users workouts, and comment and like other users workouts. This app was designed to make fitness fun and encourage more people to get active and share their experiences with fitness.  
 
 # Table of Contents
 - [Built With](#built-with)
@@ -37,12 +37,10 @@ If you would like to access the code for this project, please visit this [GitHub
 # Preview
 
 Below are screenshots of the Workout Tracker Pro application:
-![Workout Tracker Pro](assets/images/)
-![Workout Tracker Pro](assets/images/)
-![Workout Tracker Pro](assets/images/)
-![Workout Tracker Pro](assets/images/)
-![Workout Tracker Pro](assets/images/)
-![Workout Tracker Pro](assets/images/)
+![Workout Tracker Pro](assets/images/home.png)
+![Workout Tracker Pro](assets/images/workout1.png)
+![Workout Tracker Pro](assets/images/workout2.png)
+![Workout Tracker Pro](assets/images/workout3.png)
 
 # Functionality
 
@@ -50,10 +48,11 @@ Provided below is an overview of how the Workout Tracker Pro application functio
 - Upon visiting the app, the user will be presented with the homepage which describes what the app offers and how to get started.
 - As a visitor without an account you have the ability to view users' workouts, but you cannot interact with these posts until you create an account.
 - In order to sign up the user will visit the Login link, and create an account if they are new or login if they have already created an account.
-- Once logged in the user will be redirected to their profile page, which contains all their workout posts if they have any as well as a form to create a new workout post.
-- The logged in user can now also visit the Community Posts page and start interacting with other users posts. When clicking on a post you are brought to a page with that individual workout where you can now leave a like or comment on the workout. 
+- Once logged in the user will be redirected to their profile page, which contains all of their workout posts if they have any as well as a form to create a new workout post.
+- The logged in user can now also visit the Community Workouts page and start interacting with other users posts. When clicking on a post you are brought to a page with that individual workout where you can now leave a like or comment on the workout. 
 - As a logged in user, you can also create a workout. If the user visits the Create Workout page, they will be presented with a step by step walk through of how to create an individualized workout routine. 
 - Briefly, in order to create a workout the user will start by entering in a routine name, then they will use the random exercise generator to start generating exercises based on body part, once an exercise is generated the user can view the exercise demo gif and decide if they want to add it to their workout or generate a new exercise, once the user has added numerous exercises to their routine they can then save the workout and it will now show up at the bottom of the page for them to refer back to whenever they choose. 
+- Once finished on the site the user can choose to either stay logged in until their session ends or logout using the logout button in the navigation bar.
 
 # License
 
@@ -74,7 +73,7 @@ The link to the deployed Workout Tracker Pro app is provided below:
 
 # Questions
 
-If you would like to access this project's repository as well as other projects in the creator's GitHubs, click on any of the links provided below:
+If you would like to access this project's repository as well as other projects in the creators' GitHubs, click on any of the links provided below:
 
 [Sammi Moore GitHub](https://github.com/sm3131)
 
@@ -106,7 +105,7 @@ The resources used for this project are as follows:
 - ExerciseDB third party API (https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb)
 - Axios Promise based HTTP client for the browser and node.js (https://www.npmjs.com/package/axios)
 - SweetAlert CDN to create tasteful alert modals(https://sweetalert.js.org/guides/)
-- Bootstrap 
+- Bootstrap for styling (https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 -  The Bcrypt package to hash and validate passwords (https://www.npmjs.com/package/bcrypt)
 - The connect-session-sequelize package from npm to create a session in node.js (https://www.npmjs.com/package/connect-session-sequelize)
 - The Express-session package from npm to create a session in node.js (https://www.npmjs.com/package/express-session)
